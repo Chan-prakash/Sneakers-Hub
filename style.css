@@ -1,0 +1,22 @@
+/*--- scrolling message ----*/
+.running-text {
+    width:60%; /* full-width */
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    animation: scrolling 20s linear infinite  ;
+    animation-direction: right;
+    background-color: #efefef;
+    overflow: hidden;
+    text-align: center;
+    
+  }
+
+  @keyframes scrolling {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
