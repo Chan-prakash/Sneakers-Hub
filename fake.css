@@ -1,0 +1,50 @@
+/* Scrolling text container */
+.scrolling-text-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #efefef;
+    padding: 10px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Dots on both ends */
+.dot {
+    font-size: 16px; /* Adjust size */
+    color: #000; /* Dot color */
+    padding: 0 10px; /* Space between dot and scrolling text */
+}
+
+/* Scrolling text area */
+.scrolling-text {
+    width: 90%; /* Adjust width of the scrolling text */
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+
+/* Scrolling items inside the text area */
+.scrolling-items {
+    display: inline-block;
+    animation: scroll 15s linear infinite; /* Smooth scrolling animation */
+}
+
+.scrolling-items span {
+    display: inline-block;
+    margin: 0 50px; /* Space between each item */
+    font-size: 14px;
+    color: #000;
+    text-transform: uppercase;
+}
+
+/* Keyframes for the scrolling effect */
+@keyframes scroll {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}

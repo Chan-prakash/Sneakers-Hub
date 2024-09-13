@@ -1,22 +1,70 @@
+body {
+  font-family: 'Arial', 'Helvetica', sans-serif;
+}
+
+
 /*--- scrolling message ----*/
-.running-text {
-    width:60%; /* full-width */
-    overflow: hidden;
+.running-text > p {
+    overflow: hidden;/* to hide the overflowing text*/
     white-space: nowrap;
-    box-sizing: border-box;
-    animation: scrolling 20s linear infinite  ;
-    animation-direction: right;
-    background-color: #efefef;
+    animation: scrolling 15s linear infinite  ;
     overflow: hidden;
     text-align: center;
+    display: inline-block;  
+    width: fit-content;
+    height:50px;
+  } 
+  .container-scroll{
+    background-color: #efefef;
+    justify-content: space-between;
+    width:70%;
+    white-space: nowrap; 
+    overflow: hidden;
+    height: 50px;
     
+    
+  }
+.dot {
+    font-size: 16px;
+     /* Adjust size */
+    color: #000;
+    font-weight: bold; /* Dot color */
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-top: 15px;
+    padding-left: 10px;
+    padding-right: 10px;/* Space between dot and scrolling text */
+}
+.inside {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  padding-left: 100px;
+
+}
+.inside > h4 {
+  padding-left:35px;
+}
+
+.total{
+    display: flex;
+    flex-direction:row;
+    background-color: #efefef;
+    height: 50px;
+    position: relative;
   }
 
   @keyframes scrolling {
     0% {
-      transform: translateX(-100%);
-    }
-    100% {
       transform: translateX(100%);
     }
+    100% {
+      transform: translateX(-100%);
+    }
   }
+  
+
+
+
