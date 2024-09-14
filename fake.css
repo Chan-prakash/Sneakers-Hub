@@ -1,50 +1,86 @@
-/* Scrolling text container */
-.scrolling-text-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #efefef;
+.dropdown-nav {
+    position: relative;
+    display: inline-block;
+    width: 100%; /* Ensures the dropdown container takes full width */
+}
+
+/* Button styling */
+.dropdown-nav > p {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dropdown content - hidden by default */
+.dropdown-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100vw; /* Make the dropdown options take the full screen width */
+    background-color: #f9f9f9;
     padding: 10px;
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Dots on both ends */
-.dot {
-    font-size: 16px; /* Adjust size */
-    color: #000; /* Dot color */
-    padding: 0 10px; /* Space between dot and scrolling text */
-}
-
-/* Scrolling text area */
-.scrolling-text {
-    width: 90%; /* Adjust width of the scrolling text */
-    overflow: hidden;
     white-space: nowrap;
-    position: relative;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    justify-content: space-between; /* Evenly space the links */
 }
 
-/* Scrolling items inside the text area */
-.scrolling-items {
+/* Dropdown links */
+.dropdown-options a {
     display: inline-block;
-    animation: scroll 15s linear infinite; /* Smooth scrolling animation */
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #333;
+    background-color: #fff;
+    margin-right: 10px;
+    flex: 1;
+    text-align: center; /* Align the text in the center of each item */
 }
 
-.scrolling-items span {
-    display: inline-block;
-    margin: 0 50px; /* Space between each item */
-    font-size: 14px;
-    color: #000;
-    text-transform: uppercase;
+/* Change background color on hover */
+.dropdown-options a:hover {
+    background-color: #ddd;
 }
 
-/* Keyframes for the scrolling effect */
-@keyframes scroll {
-    0% {
-        transform: translateX(100%);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
+/* Show dropdown content on hover */
+.dropdown-n:hover .dropdown-options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly; /* Ensure the items are evenly spaced */
+    width: 100vw; /* Ensure full-width on hover */
 }
+
+/* Optional: styling for hover on the button */
+.dropdown:hover > p {
+    background-color: #3e8e41;
+}
+
+a {
+    transition: text-underline-offset 400ms, 
+  }
+
+  a:hover,
+  a:focus {
+    text-underline-offset: 0.4em;
+  }
+
+a:hover:before,
+h2 > a:focus:before {
+  visibility: visible;
+  transform: scaleX(1);
+} a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background: #9CF5A6;
+    visibility: hidden;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: .25s linear;
+  }

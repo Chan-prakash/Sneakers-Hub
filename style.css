@@ -1,70 +1,307 @@
-body {
-  font-family: 'Arial', 'Helvetica', sans-serif;
+:root {
+  --dark-primary: #1b1f24;
+  --light-primary: #12bdff;
+  --secdark-primary:#22282f;
 }
 
+body {
+  font-family: "Open Sans", sans-serif;
+}
 
 /*--- scrolling message ----*/
-.running-text > p {
-    overflow: hidden;/* to hide the overflowing text*/
-    white-space: nowrap;
-    animation: scrolling 15s linear infinite  ;
-    overflow: hidden;
-    text-align: center;
-    display: inline-block;  
-    width: fit-content;
-    height:50px;
-  } 
-  .container-scroll{
-    background-color: #efefef;
-    justify-content: space-between;
-    width:70%;
-    white-space: nowrap; 
-    overflow: hidden;
-    height: 50px;
-    
-    
-  }
-.dot {
-    font-size: 16px;
-     /* Adjust size */
-    color: #000;
-    font-weight: bold; /* Dot color */
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    padding-top: 15px;
-    padding-left: 10px;
-    padding-right: 10px;/* Space between dot and scrolling text */
+.running-text p {
+  display: flex;
+  align-items: center;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300; 
+  font-size:small;/* Vertically aligns items in the center */
 }
-.inside {
+
+.spacing {
+  margin-left: 50px; /* Adjust this value for the amount of space you want */
+}
+
+.total {
+  display: flex;
+  background-color: #efefef;
+  height: 40px;
+}
+
+.running-text > p {
+  animation: scrolling 15s linear infinite; /* scrolling from the keyframes*/
+  display: flex;
+  height: 40px;
+}
+
+.container-scroll {
+  background-color: #efefef;
+  width: 70%;
+  overflow: hidden;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Open Sans", sans-serif;
+
+}
+
+
+@keyframes scrolling {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* for dot athe the both the end*/
+.dot {
+  font-size: 16px; /* Adjust size */
+  color: #000;
+  font-weight: bold; /* Dot color */
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.info {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  text-align: center;
-  padding-left: 100px;
+  position: relative; /* to use left we used it */
+  align-items: center;
+  left: 50px;
+  font-family: "Open Sans", sans-serif;
+  font-weight:lighter;
+  font-size: medium;
 
 }
-.inside > h4 {
-  padding-left:35px;
+.track{
+  padding-right:25px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: medium;
+  font-weight: lighter;
 }
 
-.total{
-    display: flex;
-    flex-direction:row;
-    background-color: #efefef;
-    height: 50px;
-    position: relative;
-  }
 
-  @keyframes scrolling {
-    0% {
-      transform: translateX(100%);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
+.info .track:hover{
+  cursor:pointer;
+}
+
+
+/* drop down*/
+.dropbtn {
+  color: black;
+  padding-left: 16px;
+  padding-right: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 140px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown:hover{
+  text-decoration: underline;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration:none;
+  display: block;
+  width: max-content;
+
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/*.dropdown:hover .dropbtn {
+
+}*/
+
+/* hero section*/
+.Hero-Section {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  padding: 10px 20px;
+  white-space: nowrap;
+}
+
+.hero2 {
+  display: flex;
+  white-space: nowrap;
+}
+
+.heroMessage {
+  display: inline-flex; /* Make the p elements inline-flex */
+  align-items: center;  /* Vertically center the text and icons */ /* Space between items */
+  white-space: nowrap; 
+  margin-left: 20px; /* Prevent wrapping */
+}
+
+.arrow {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.arrow i {
+  transition: transform 0.3s ease; /* Smooth transition for the rotation */
+}
+
+.arrow:hover i {
+  transform: rotate(180deg); /* Rotate the arrow by 180 degrees */
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.menu-item {
+  position: relative;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.menu-item p {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  min-width: 200px;
+  z-index: 1;
+}
+
+.dropdown-content p {
+  margin: 0;
+  padding: 8px 0;
+  white-space: nowrap;
+}
+
+.menu-item:hover .dropdown-content {
+  display: block; /* Show dropdown on hover */
+}
+
+.menu-item i {
+  transition: transform 0.3s ease; /* Transition for arrow rotation */
+}
+
+.menu-item:hover i {
+  transform: rotate(90deg); /* Rotate the arrow on hover */
+}
+
+.head-hero{
+  margin-right: 100px;
+}
+
+.hero-main{
+  margin-right: 100px;
+}
+
+.hero-main > div{
+   margin-right: 50px;
+}
+
+.hero2 > p {
+ margin-right:25px;
+}
+.dropdown-nav {
+  position: relative;
+  display: inline-block;
+   /* Ensures the dropdown container takes full width */
+}
+
+/* Button styling */
+
+
+/* Dropdown content - hidden by default */
+.dropdown-options {
+  display:none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%; /* Make the dropdown options take the full screen width */
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
   
+}
+
+/* Dropdown links */
+/* Dropdown links */
+.dropdown-options a {
+  display:flex;
+  position: relative; /* Add this to make the ::before element positioned relative to the link */
+  padding: 8px 16px;
+  text-decoration: none;
+  color: #333;
+  margin-right: 50px;
+  flex: 1;
+  text-align: center; /* Align the text in the center of each item */
+}
+
+.dropdown-options a::before {
+  content: "";
+  position: absolute;
+  width:100%;
+  height:1px;
+  bottom: 0;
+  left: 0;
+  background:#000;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: transform 0.25s linear;
+}
+
+/* Change background color on hover */
+.dropdown-options a:hover::before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+
+/* Show dropdown content on hover */
+.dropdown-nav:hover .dropdown-options {
+  display:flex;
+  flex-direction: row;
+  
+/* Ensure the items are evenly spaced */
+  width: 100vw; /* Ensure full-width on hover */
+}
+
+
+
 
 
 
